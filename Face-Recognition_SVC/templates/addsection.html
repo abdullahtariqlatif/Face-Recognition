@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{%static 'addstudent/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'addstudent/css/style.css' %}">
+</head>
+<style>
+body {
+  background-image: url('{% static 'images/face1.jpg'%}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<body>
+
+<div class="container-fluid" style="background-image: url('');">
+
+    <div class="signup-form">
+                    <form method="POST" action="addsection" class="register-form" id="register-form">
+                        {% csrf_token %}
+                        <h2 class="white-text" >Add Section</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dept" >Department Name :</label>
+                                <input value="{{depts.dept}}" type="text" name="dept" id="dept" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="section" >Section Name :</label>
+                                <input type="text" name="section" id="section" required/>
+                            </div>
+
+<!--                        <div class="form-group">-->
+<!--                            <label for="email">Email ID :</label>-->
+<!--                            <input type="email" name="email" id="email" required/>-->
+<!--                        </div>-->
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Add Section" class="submit" name="add" id="add" />
+<!--                            <a href="/addsection/{{depts.dept}}" class="btn btn-outline-primary btn-sm">Add Section</a>-->
+                        </div>
+                    </form>
+                </div>
+</div>
+
+<!-- JS -->
+    <script src="{%static 'addstudent/vendor/jquery/jquery.min.js/' %}"></script>
+    <script src="{%static 'addstudent/js/main.js/' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{%static 'nevbar/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{%static 'nevbar/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{%static 'nevbar/css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{%static 'nevbar/css/style.css' %}">
+
+
+    <title>Website Menu #3</title>
+  </head>
+<style>
+body {
+  background-image: url('{% static 'images/face1.jpg'%}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+  <body>
+  <div class="container-fluid" style="background-image: url('');">
+
+    <header class="site-navbar" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-11 col-xl-2">
+
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li ><a href="/navbar"><span>Home</span></a></li>
+
+                <li class="active"><a href="/record"><span>Student Record</span></a></li>
+                  <li><a href="/addstudent"><span>Add Student</span></a></li>
+                <li><a href="/contact"><span>Logout</span></a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+
+          <table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Dept.</th>
+<!--      <th scope="col">Section</th>-->
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in record %}
+      <td>{{r.department}}</td>
+<!--      <td>{{r.section}}</td>-->
+      <td>{{r.id}}</td>
+      <td>{{r.name}}</td>
+      <td>
+          <a href="/captureimage/{{r.id}}/{{r.name}}" class="btn btn-outline-success btn-sm">Capture Images</a>
+          <a href="/viewattendance/{{r.id}}" class="btn btn-outline-secondary btn-sm">View Attendance</a>
+          <a href="/profile/{{r.id}}" class="btn btn-outline-warning btn-sm">Profile</a>
+          <a href="/update/{{r.id}}" class="btn btn-outline-primary btn-sm">Edit</a>
+          <a href="/delete/{{r.id}}/{{r.name}}" class="btn btn-outline-danger btn-sm">Delete</a>
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="{%static 'nevbar/#' %}" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+
+    </header>
+  </div>
+
+<!--    <div class="hero" style="background-image: url('{% static 'images/navbar.jpg'%}');"></div>-->
+
+
+
+    <script src="{%static 'nevbar/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{%static 'nevbar/js/popper.min.js' %}"></script>
+    <script src="{%static 'nevbar/js/bootstrap.min.js' %}"></script>
+    <script src="{%static 'nevbar/js/jquery.sticky.js' %}"></script>
+    <script src="{%static 'nevbar/js/main.js' %}"></script>
+
+
+
+  </body>
+</html>
